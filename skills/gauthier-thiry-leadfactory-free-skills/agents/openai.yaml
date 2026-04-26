@@ -1,0 +1,7 @@
+interface:
+  display_name: "Gauthier Thiry LeadFactory Free Skills"
+  short_description: "Public Meta Ads research workflow"
+  brand_color: "#4A7FD4"
+  default_prompt: "Use $gauthier-thiry-leadfactory-free-skills to create a public no-key LeadFactory research, Meta Ads CSV, strategy, and creative brief folder on my Desktop."
+policy:
+  allow_implicit_invocation: true
