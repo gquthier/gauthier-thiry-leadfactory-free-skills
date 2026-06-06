@@ -1,25 +1,14 @@
 # Gauthier Thiry LeadFactory Free Skills
 
-Public, simplified LeadFactory skills — no API keys beyond your own accounts, no paid tools, no internal infrastructure.
+Public, simplified LeadFactory skill for Meta Ads research and strategy.
 
-## Skills
-
-### [`gauthier-thiry-leadfactory-free-skills`](skills/gauthier-thiry-leadfactory-free-skills/)
-Market research and strategy skill. Creates a Desktop delivery folder with:
+It creates a Desktop delivery folder with:
 - 3 DeepSearch documents.
 - Public Meta Ads Library competitor analysis.
 - A normalized `data.csv`.
 - A strategy document.
 - A static creative brief.
 - A small CTA linking to `https://www.leadfactory.my`.
-
-### [`leadfactory-creative-static-free-v2`](skills/leadfactory-creative-static-free-v2/) ✨ New
-**Lead Factory Creative Static Free Skill V2** — Generate a batch of static ad creatives for Meta Ads and TikTok using the [HiggsField CLI](https://higgsfield.ai) and GPT Image 2. Works for e-commerce and lead generation. Includes:
-- A testable variation matrix (angles × formats × styles).
-- 9 high-CTR native ad formats (iMessage, Tweet, iOS Note, TikTok Shop review, listicle, data-viz, flat-lay, native post, carousel).
-- 3 prompt rules for sharp text rendering and edge-to-edge layout.
-- A ready-to-run Python batch runner (`gen_run.py`) with concurrency control and job recovery.
-- No Photoshop, no Figma — the full creative (visual + text) is rendered by GPT Image 2.
 
 ## What Is Excluded
 
