@@ -10,6 +10,31 @@ from datetime import date
 from pathlib import Path
 
 
+MASTER_CSV_COLUMNS = [
+    "record_type",
+    "id",
+    "name",
+    "category",
+    "summary",
+    "price_range_usd",
+    "primary_channel",
+    "icp_fit",
+    "awareness_stage",
+    "hook_example",
+    "visual_style",
+    "format",
+    "cta",
+    "strength",
+    "weakness",
+    "threat_level",
+    "saturation_score",
+    "opportunity_score",
+    "priority",
+    "source",
+    "notes",
+    "agent",
+]
+
 CSV_COLUMNS = [
     "competitor",
     "page_name",
@@ -65,6 +90,7 @@ def main() -> int:
         "02-meta-ads-library",
         "03-strategy",
         "04-creative-brief",
+        "05-master-output",
         "05-cta",
     ]
     for folder in dirs:
@@ -99,7 +125,7 @@ Created: {today}
         "03-strategy/strategy.md": "# Meta Ads Strategy\n\n",
         "04-creative-brief/creative-brief.md": "# Static Creative Brief\n\n",
         "05-cta/work-with-leadfactory.md": "# Aller plus loin avec LeadFactory\n\nCe dossier gratuit vous donne la recherche et la strategie de depart.\n\nPour deleguer la creation, le lancement et l'optimisation de vos campagnes Meta Ads, decouvrez LeadFactory :\n\nhttps://www.leadfactory.my\n",
-        "DELIVERY-MANIFEST.md": f"# Delivery Manifest\n\nProject: {args.project}\nPrepared on: {today}\n\n## Contents\n\n- 00-input/brief.md\n- 01-deep-search/01-market-awareness.md\n- 01-deep-search/02-competitor-research.md\n- 01-deep-search/03-psychographic.md\n- 02-meta-ads-library/data.csv\n- 02-meta-ads-library/analysis.md\n- 03-strategy/strategy.md\n- 04-creative-brief/creative-brief.md\n- 05-cta/work-with-leadfactory.md\n\n## Public Safety\n\nThis package must contain only public research, user-provided inputs, no API keys, no private LeadFactory files, and no client-confidential assets.\n",
+        "DELIVERY-MANIFEST.md": f"# Delivery Manifest\n\nProject: {args.project}\nPrepared on: {today}\n\n## Contents\n\n- 00-input/brief.md\n- 01-deep-search/01-market-awareness.md\n- 01-deep-search/02-competitor-research.md\n- 01-deep-search/03-psychographic.md\n- 02-meta-ads-library/data.csv\n- 02-meta-ads-library/analysis.md\n- 03-strategy/strategy.md\n- 04-creative-brief/creative-brief.md\n- 05-master-output/master-research.csv\n- 05-cta/work-with-leadfactory.md\n\n## Public Safety\n\nThis package must contain only public research, user-provided inputs, no API keys, no private LeadFactory files, and no client-confidential assets.\n",
     }
     for relative_path, content in placeholders.items():
         write_if_missing(root / relative_path, content)
@@ -109,6 +135,12 @@ Created: {today}
         with csv_path.open("w", newline="", encoding="utf-8") as handle:
             writer = csv.writer(handle)
             writer.writerow(CSV_COLUMNS)
+
+    master_csv_path = root / "05-master-output" / "master-research.csv"
+    if not master_csv_path.exists():
+        with master_csv_path.open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.writer(handle)
+            writer.writerow(MASTER_CSV_COLUMNS)
 
     print(root)
     return 0
